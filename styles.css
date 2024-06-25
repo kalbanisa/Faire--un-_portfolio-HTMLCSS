@@ -370,6 +370,7 @@ background: #28023D;
     .row3{
         flex-direction: column;
         gap: 20px;
+         padding-left: 70px;
     }
     .counter{
         /* display: flex; */
