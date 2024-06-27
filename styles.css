@@ -222,6 +222,97 @@ svg{
     display: block;
      width: 50%;
 }
+.circular-progress {
+    --size: 250px;
+    --half-size: calc(var(--size) / 2);
+    --stroke-width: 20px;
+    --radius: calc((var(--size) - var(--stroke-width)) / 2);
+    --circumference: calc(var(--radius) * pi * 2);
+    --dash: calc((var(--progress) * var(--circumference)) / 100);
+    animation: progress-animation 5s linear 0s 1 forwards;
+  }
+  
+  .circular-progress circle {
+    cx: var(--half-size);
+    cy: var(--half-size);
+    r: var(--radius);
+    stroke-width: var(--stroke-width);
+    fill: none;
+    stroke-linecap: round;
+  }
+  
+  .circular-progress circle.bg {
+    stroke: #ddd;
+    stroke-width: 2.999784px;
+  }
+  
+  .circular-progress circle.fg {
+    transform: rotate(-90deg);
+    transform-origin: var(--half-size) var(--half-size);
+    stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+    transition: stroke-dasharray 0.3s linear 0s;
+    stroke: rgb(253,173,1);
+    stroke-width: 2.999784px;
+  }
+  .circu {
+    --size: 250px;
+    --half-size: calc(var(--size) / 2);
+    --stroke-width: 20px;
+    --radius: calc((var(--size) - var(--stroke-width)) / 2);
+    --circumference: calc(var(--radius) * pi * 2);
+    --dash: calc((var(--progress) * var(--circumference)) / 100);
+    animation: progress-anima 5s linear 0s 1 forwards;
+  }
+  .circula {
+    --size: 250px;
+    --half-size: calc(var(--size) / 2);
+    --stroke-width: 20px;
+    --radius: calc((var(--size) - var(--stroke-width)) / 2);
+    --circumference: calc(var(--radius) * pi * 2);
+    --dash: calc((var(--progress) * var(--circumference)) / 100);
+    animation: progress-ani 5s linear 0s 1 forwards;
+  }
+  .circular-progress circle.fgq {
+    transform: rotate(-90deg);
+    transform-origin: var(--half-size) var(--half-size);
+    stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+    transition: stroke-dasharray 0.3s linear 0s;
+    stroke: rgb(253,173,1);
+    stroke-width: 2.999784px;
+    
+  }
+  
+  @property --progress {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+  }
+  
+  @keyframes progress-animation {
+    from {
+      --progress: 0;
+    }
+    to {
+      --progress: 97;
+    }
+  }
+  @keyframes progress-anima {
+    from {
+      --progress: 0;
+    }
+    to {
+      --progress: 78;
+    }
+  }
+  @keyframes progress-ani {
+    from {
+      --progress: 0;
+    }
+    to {
+      --progress: 67;
+    }
+  }
+
 .radial-progress .progress-title {
     position: absolute;
     top: 40%;
@@ -313,6 +404,7 @@ width: 16px;
 .counter{
     display: flex;
     gap: 30px;
+    color: #fff;
 }
 /* <footer> */
 footer .copyright{
@@ -372,8 +464,14 @@ background: #28023D;
         gap: 20px;
          padding-left: 70px;
     }
+    .row4 {
+        flex-direction: column;
+          gap: 10px;
+          
+    }
     .counter{
         /* display: flex; */
+        flex-direction: column;
         gap: 10px;
         align-items: center;
     }
