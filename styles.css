@@ -134,7 +134,7 @@ li {
 /* <section class="portfolio-section section"> */
 .portfolio-section{
     padding-bottom: 0;
-    margin-top: 30px;
+/*     margin-top: 30px; */
 }
 .portfolio-section .portfolioFilter
 {
@@ -155,7 +155,7 @@ li {
 .portfolioContainer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 295px 295px 295px  295px  295px;
+    grid-template-rows: 295px 295px 295px;
     grid-gap: 10px;
     overflow: hidden; 
 
